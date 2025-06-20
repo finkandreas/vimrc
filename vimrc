@@ -103,6 +103,7 @@ set softtabstop=4
 set tabstop=4 " make real tabs 4 wide
 " disable expandtab for Makefiles, the TAB is crucial there
 autocmd FileType make setlocal noexpandtab
+" autocmd FileType go setlocal expandtab
 
 
 " open new vsplits on the right
@@ -178,6 +179,7 @@ endif
 " hilight tabs
 set list
 set listchars=tab:>-
+autocmd FileType go setlocal listchars=tab:\ \ 
 
 " highlight trailing whitespaces
 :highlight ExtraWhitespace ctermbg=red guibg=red
