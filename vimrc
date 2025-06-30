@@ -178,13 +178,14 @@ endif
 
 " hilight tabs
 set list
-set listchars=tab:>-
-autocmd FileType go setlocal listchars=tab:\ \ 
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+highlight SpecialKey ctermfg=white ctermbg=red
+:match NonText '^\s\+' " whitespace at the beginning is considered NonText, for other coloring
 
 " highlight trailing whitespaces
-:highlight ExtraWhitespace ctermbg=red guibg=red
+":highlight ExtraWhitespace ctermbg=red guibg=red
 " " Show trailing whitespace and spaces before a tab:
-:match ExtraWhitespace /\s\+$\| \+\ze\t/
+":match ExtraWhitespace /\s\+$\| \+\ze\t/
 " " Switch off :match highlighting.
 " :match
 "
@@ -196,7 +197,7 @@ hi CursorLineNr ctermfg=green ctermbg=236  term=bold cterm=bold
 
 " disable background, use term background
 hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE ctermfg=darkgray
 
 " parantheses matches
 hi MatchParen ctermbg=red cterm=bold ctermfg=white
@@ -338,7 +339,7 @@ else
 endif
 
 " ----- vim-indent-guides ---------
-let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 hi IndentGuidesOdd ctermbg=234
@@ -365,4 +366,3 @@ let g:ale_python_mypy_options = '--strict --cache-dir $HOME/.cache/mypy'
 " do not set python-executable in mypy_options here, but set it in the file mypy.ini with content:
 " [mypy]
 " python_executable = venv/bin/python
-
