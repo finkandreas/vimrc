@@ -225,6 +225,9 @@ nnoremap <leader><Space> :nohlsearch<CR>
 " switch ignorecase
 nnoremap <leader>i :set ignorecase!<CR>
 
+" switch list
+nnoremap <leader><tab> :set list!<CR>:match NonText '^\s\+'<CR>
+
 " toggle paste mode
 " this ignores indentation rules when pasting
 nnoremap <leader>p :set paste! paste?<CR>
