@@ -42,6 +42,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'nathanaelkane/vim-indent-guides'
     " move around by indentation
     Plug 'jeetsukumaran/vim-indentwise'
+    " allow diffing in the same file different blocks
+    Plug 'https://github.com/AndrewRadev/linediff.vim'
+    " vim-go
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     " provides fuzzy completer and clang based cleverness
     " NOTE:
